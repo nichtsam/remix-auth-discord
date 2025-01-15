@@ -33,7 +33,8 @@ jobs:
 
       - name: Setup git
         run: |
-          git config user.name 'Samuel Jensen'
+          git config user.name ${{GIT_USER_NAME}}
+          git config user.email ${{GIT_USER_EMAIL}}
 
       - name: Bump version
         run: npm version ${{ github.event.inputs.version }}
